@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Fish & Chips | Traditional British Fish & Chips in East London</title>
+  <meta name="description" content="Golden Fish & Chips - Fresh, delicious traditional fish and chips in East London. Family-run since 1985.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'display': ['Playfair Display', 'serif'],
+            'body': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'gold': '#D4A853',
+            'cream': '#FDF8F3',
+            'charcoal': '#1A1A1A',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.8) 100%),
+                  url('https://images.unsplash.com/photo-1579208030886-b937da0925dc?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .gold-gradient {
+      background: linear-gradient(135deg, #D4A853 0%, #B8923F 100%);
+    }
+    
+    .pattern-bg {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A853' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .floating { animation: float 6s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .fade-in { animation: fadeIn 1s ease-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+  </style>
+</head>
+<body class="bg-cream text-charcoal">
+  
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-12 h-12 gold-gradient rounded-full flex items-center justify-center">
+            <i class="fas fa-fish text-white text-xl"></i>
+          </div>
+          <span class="font-display text-2xl font-bold">Golden Fish & Chips</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#about" class="hover:text-gold transition">About</a>
+          <a href="#menu" class="hover:text-gold transition">Menu</a>
+          <a href="#reviews" class="hover:text-gold transition">Reviews</a>
+          <a href="#contact" class="gold-gradient text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition">
+            Order Now
+          </a>
+        </div>
+        
+        <button class="md:hidden text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-charcoal/50"></div>
+    
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+      <div class="floating mb-8">
+        <div class="w-32 h-32 mx-auto gold-gradient rounded-full flex items-center justify-center shadow-2xl">
+          <i class="fas fa-fish text-5xl text-white"></i>
+        </div>
+      </div>
+      
+      <h1 class="font-display text-5xl md:text-7xl font-bold mb-6 fade-in">
+        Golden Fish & Chips
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-gray-200 mb-4 fade-in delay-100">
+        Traditional British Cuisine Since 1985
+      </p>
+      
+      <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto fade-in delay-200">
+        Fresh fish from Billingsgate Market, hand-cut chips, and authentic recipes passed down through generations. Experience the best fish & chips in East London.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in delay-300">
+        <a href="#menu" class="gold-gradient text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition shadow-lg">
+          <i class="fas fa-utensils mr-2"></i> View Menu
+        </a>
+        <a href="#contact" class="bg-white text-charcoal px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition shadow-lg">
+          <i class="fas fa-phone mr-2"></i> Call Now
+        </a>
+      </div>
+      
+      <!-- Stats -->
+      <div class="flex flex-wrap justify-center gap-8 mt-16 text-center">
+        <div>
+          <div class="text-4xl font-bold text-gold">40+</div>
+          <div class="text-gray-400">Years</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-gold">500K+</div>
+          <div class="text-gray-400">Customers</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-gold">5★</div>
+          <div class="text-gray-400">Rating</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <i class="fas fa-chevron-down text-white text-2xl"></i>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 pattern-bg">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-gold font-medium tracking-wider uppercase">Our Story</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold mt-2 mb-6">
+            Four Generations of Excellence
+          </h2>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+            Golden Fish & Chips has been serving the East Ham community since 1985. What started as a small family shop has become a beloved local institution, known for our commitment to quality and authentic traditional recipes.
+          </p>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Our fish is delivered fresh daily from Billingsgate Market, and we only use the finest British potatoes for our legendary hand-cut chips. Every meal is cooked to order by our experienced team.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+              <i class="fas fa-fish text-3xl text-gold mb-3"></i>
+              <h3 class="font-bold text-lg mb-2">Fresh Daily</h3>
+              <p class="text-gray-600">Fish delivered fresh from Billingsgate every morning</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+              <i class="fas fa-award text-3xl text-gold mb-3"></i>
+              <h3 class="font-bold text-lg mb-2">Award Winning</h3>
+              <p class="text-gray-600">Recognized as London's best fish & chips</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="absolute -top-4 -left-4 w-full h-full border-2 border-gold rounded-3xl"></div>
+          <img src="https://images.unsplash.com/photo-1579208030886-b937da0925dc?w=800&q=80" 
+               alt="Fish and Chips" 
+               class="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover">
+          
+          <!-- Floating badge -->
+          <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-gold">40+</div>
+              <div class="text-gray-600 font-medium">Years of Excellence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="py-24 bg-charcoal text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-gold font-medium tracking-wider uppercase">Our Menu</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mt-2">
+          Classic British Favourites
+        </h2>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Menu Item 1 -->
+        <div class="bg-white/5 rounded-3xl p-8 card-hover border border-white/10">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-2xl font-bold mb-1">Cod & Chips</h3>
+              <p class="text-gray-400 text-sm">Fresh Atlantic cod</p>
+            </div>
+            <span class="gold-gradient text-charcoal px-4 py-1 rounded-full font-bold">£12.50</span>
+          </div>
+          <p class="text-gray-300">Our signature dish - premium cod in crispy beer batter with hand-cut chips, mushy peas, and tartar sauce.</p>
+          <button class="mt-6 w-full gold-gradient text-charcoal py-3 rounded-xl font-semibold hover:opacity-90 transition">
+            Add to Order
+          </button>
+        </div>
+        
+        <!-- Menu Item 2 -->
+        <div class="bg-white/5 rounded-3xl p-8 card-hover border border-white/10">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-2xl font-bold mb-1">Haddock & Chips</h3>
+              <p class="text-gray-400 text-sm">Premium Scottish haddock</p>
+            </div>
+            <span class="gold-gradient text-charcoal px-4 py-1 rounded-full font-bold">£13.50</span>
+          </div>
+          <p class="text-gray-300">The classic choice - sweet, flaky haddock in our famous batter with golden chips.</p>
+          <button class="mt-6 w-full gold-gradient text-charcoal py-3 rounded-xl font-semibold hover:opacity-90 transition">
+            Add to Order
+          </button>
+        </div>
+        
+        <!-- Menu Item 3 -->
+        <div class="bg-white/5 rounded-3xl p-8 card-hover border border-white/10">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-2xl font-bold mb-1">Plaice & Chips</h3>
+              <p class="text-gray-400 text-sm">Fresh Dover sole</p>
+            </div>
+            <span class="gold-gradient text-charcoal px-4 py-1 rounded-full font-bold">£12.00</span>
+          </div>
+          <p class="text-gray-300">A lighter option - delicate plaice fillets in crispy batter with chips.</p>
+          <button class="mt-6 w-full gold-gradient text-charcoal py-3 rounded-xl font-semibold hover:opacity-90 transition">
+            Add to Order
+          </button>
+        </div>
+        
+        <!-- Menu Item 4 -->
+        <div class="bg-white/5 rounded-3xl p-8 card-hover border border-white/10">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-2xl font-bold mb-1">Scampi & Chips</h3>
+              <p class="text-gray-400 text-sm">Wholesale prime scampi</p>
+            </div>
+            <span class="gold-gradient text-charcoal px-4 py-1 rounded-full font-bold">£13.00</span>
+          </div>
+          <p class="text-gray-300">Juicy scampi in crispy breadcrumbs with chunky chips and garlic mayo.</p>
+          <button class="mt-6 w-full gold-gradient text-charcoal py-3 rounded-xl font-semibold hover:opacity-90 transition">
+            Add to Order
+          </button>
+        </div>
+        
+        <!-- Menu Item 5 -->
+        <div class="bg-white/5 rounded-3xl p-8 card-hover border border-white/10">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-2xl font-bold mb-1">Chips (Large)</h3>
+              <p class="text-gray-400 text-sm">Hand-cut British potatoes</p>
+            </div>
+            <span class="gold-gradient text-charcoal px-4 py-1 rounded-full font-bold">£4.50</span>
+          </div>
+          <p class="text-gray-300">Our legendary chips - double-fried for the perfect golden crunch.</p>
+          <button class="mt-6 w-full gold-gradient text-charcoal py-3 rounded-xl font-semibold hover:opacity-90 transition">
+            Add to Order
+          </button>
+        </div>
+        
+        <!-- Menu Item 6 -->
+        <div class="bg-white/5 rounded-3xl p-8 card-hover border border-white/10">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="font-display text-2xl font-bold mb-1">Chicken & Chips</h3>
+              <p class="text-gray-400 text-sm">Hand-breaded chicken</p>
+            </div>
+            <span class="gold-gradient text-charcoal px-4 py-1 rounded-full font-bold">£11.00</span>
+          </div>
+          <p class="text-gray-300">Hand-breaded chicken breast with our famous chips.</p>
+          <button class="mt-6 w-full gold-gradient text-charcoal py-3 rounded-xl font-semibold hover:opacity-90 transition">
+            Add to Order
+          </button>
+        </div>
+      </div>
+      
+      <!-- Extras -->
+      <div class="mt-16">
+        <h3 class="font-display text-2xl font-bold mb-8 text-center">Extras</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white/5 rounded-xl p-4 flex justify-between items-center">
+            <span>Mushy Peas</span>
+            <span class="font-bold text-gold">£2.50</span>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4 flex justify-between items-center">
+            <span>Onion Rings</span>
+            <span class="font-bold text-gold">£3.50</span>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4 flex justify-between items-center">
+            <span>Pickled Egg</span>
+            <span class="font-bold text-gold">£1.50</span>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4 flex justify-between items-center">
+            <span>Curry Sauce</span>
+            <span class="font-bold text-gold">£2.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-gold font-medium tracking-wider uppercase">Reviews</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mt-2">
+          What Our Customers Say
+        </h2>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl shadow-lg card-hover">
+          <div class="flex text-gold mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-600 mb-6">"Best fish and chips in London! The batter is perfectly crispy and the chips are always fresh. Been coming here for 20 years and it's never let me down."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+              <i class="fas fa-user text-gray-500"></i>
+            </div>
+            <div>
+              <div class="font-bold">James M.</div>
+              <div class="text-sm text-gray-500">Local Resident</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-3xl shadow-lg card-hover">
+          <div class="flex text-gold mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-600 mb-6">"Worth the drive from Central London! Authentic traditional fish and chips just like my grandma used to make. The mushy peas are incredible too!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+              <i class="fas fa-user text-gray-500"></i>
+            </div>
+            <div>
+              <div class="font-bold">Sarah K.</div>
+              <div class="text-sm text-gray-500">Customer</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-3xl shadow-lg card-hover">
+          <div class="flex text-gold mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-600 mb-6">"Absolutely fantastic! The fish is always fresh and the chips are perfectly crispy. This is what fish and chips should be. Highly recommend!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+              <i class="fas fa-user text-gray-500"></i>
+            </div>
+            <div>
+              <div class="font-bold">David R.</div>
+              <div class="text-sm text-gray-500">Food Blogger</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 bg-charcoal text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16">
+        <div>
+          <span class="text-gold font-medium tracking-wider uppercase">Contact Us</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold mt-2 mb-6">
+            Visit Us Today
+          </h2>
+          <p class="text-xl text-gray-300 mb-8">
+            We'd love to serve you! Drop in or give us a call to place your order.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 gold-gradient rounded-2xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Address</h3>
+                <p class="text-gray-300">45 High Street<br>East Ham, London E6 2HP</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-14-14 gold-gradient h rounded-2xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Phone</h3>
+                <a href="tel:+442084701234" class="text-gold text-xl hover:underline">+44 20 8470 1234</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 gold-gradient rounded-2xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Email</h3>
+                <a href="mailto:goldenfish-east@outlook.com" class="text-gold hover:underline">goldenfish-east@outlook.com</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Hours -->
+          <div class="mt-10">
+            <h3 class="font-bold text-lg mb-4">Opening Hours</h3>
+            <div class="space-y-2">
+              <div class="flex justify-between">
+                <span class="text-gray-300">Monday - Friday</span>
+                <span class="font-medium">11:00 AM - 9:00 PM</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-300">Saturday</span>
+                <span class="font-medium">11:00 AM - 10:00 PM</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-300">Sunday</span>
+                <span class="font-medium">12:00 PM - 8:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Map placeholder -->
+        <div class="bg-white/5 rounded-3xl p-8">
+          <div class="w-full h-full min-h-[400px] bg-gray-800 rounded-2xl flex items-center justify-center">
+            <div class="text-center">
+              <i class="fas fa-map text-6xl text-gray-600 mb-4"></i>
+              <p class="text-gray-400">Interactive Map</p>
+              <p class="text-gray-500 text-sm">45 High Street, East Ham, London</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="gold-gradient py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-4xl font-bold text-charcoal mb-4">
+        Ready for the Best Fish & Chips?
+      </h2>
+      <p class="text-xl text-charcoal/80 mb-8">
+        Call now to place your order or simply pop in!
+      </p>
+      <a href="tel:+442084701234" class="inline-block bg-charcoal text-white px-10 py-4 rounded-full font-bold text-xl hover:bg-charcoal/90 transition shadow-lg">
+        <i class="fas fa-phone mr-2"></i> Call Now: +44 20 8470 1234
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 gold-gradient rounded-full flex items-center justify-center">
+            <i class="fas fa-fish text-white text-xl"></i>
+          </div>
+          <span class="font-display text-2xl font-bold">Golden Fish & Chips</span>
+        </div>
+        
+        <div class="text-center text-gray-400">
+          <p>&copy; 2026 Golden Fish & Chips. All rights reserved.</p>
+          <p class="text-sm mt-2">Traditional Fish & Chips in East London</p>
+        </div>
+        
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-charcoal transition">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-charcoal transition">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-charcoal transition">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('shadow-md');
+      } else {
+        nav.classList.remove('shadow-md');
+      }
+    });
+  </script>
+</body>
+</html>
